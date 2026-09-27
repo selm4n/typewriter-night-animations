@@ -1,0 +1,79 @@
+/* Transparent, front-facing component. All drawing uses currentColor. */
+.typewriter-animation {width:100%;max-width:900px;margin:0;color:inherit;background:transparent;--twn-duration:8s;}
+.typewriter-animation > svg {display:block;width:100%;height:auto;aspect-ratio:3/2;overflow:hidden;}
+.typewriter-animation .twn-lines {stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;}
+.typewriter-animation .twn-key-a,.typewriter-animation .twn-key-b {transform-box:fill-box;transform-origin:center;}
+.typewriter-animation .twn-key-a,.typewriter-animation .twn-key-b,.typewriter-animation .twn-typebar,.typewriter-animation .twn-carriage,.typewriter-animation .twn-paper,.typewriter-animation .twn-new-line,.typewriter-animation .twn-lever {animation-duration:var(--twn-duration);animation-iteration-count:infinite;animation-timing-function:ease-in-out;}
+.typewriter-animation .twn-key-a {animation-name:twn-keys-a;}
+.typewriter-animation .twn-key-b {animation-name:twn-keys-b;}
+.typewriter-animation .twn-typebar {animation-name:twn-strike;}
+.typewriter-animation .twn-new-line {animation-name:twn-writing;}
+.typewriter-animation .twn-paper {animation-name:twn-paper-settle;}
+.typewriter-animation.twn-think {--twn-duration:9s;}
+.typewriter-animation.twn-think .twn-key-a {animation-name:twn-think-a;}
+.typewriter-animation.twn-think .twn-key-b {animation-name:twn-think-b;}
+.typewriter-animation.twn-think .twn-typebar {animation-name:twn-think-strike;}
+.typewriter-animation.twn-think .twn-new-line {animation-name:twn-think-writing;}
+.typewriter-animation.twn-return .twn-key-a {animation-name:twn-return-a;}
+.typewriter-animation.twn-return .twn-key-b {animation-name:twn-return-b;}
+.typewriter-animation.twn-return .twn-typebar {animation-name:twn-return-strike;}
+.typewriter-animation.twn-return .twn-carriage {animation-name:twn-carriage-return;}
+.typewriter-animation.twn-return .twn-lever {transform-origin:216px 200px;animation-name:twn-lever-return;}
+/* Brief key presses are separated by rests; nothing vibrates continuously. */
+@keyframes twn-keys-a {0%,12%,24%,36%,58%,70%,82%,94%,100%{transform:translateY(0) scaleY(1)} 6%,18%,30%,64%,76%,88%{transform:translateY(1.6px) scaleY(.7)}}
+@keyframes twn-keys-b {0%,20%,32%,54%,66%,78%,90%,100%{transform:translateY(0) scaleY(1)} 14%,26%,60%,72%,84%{transform:translateY(1.6px) scaleY(.7)}}
+@keyframes twn-strike {0%,12%,24%,36%,58%,70%,82%,94%,100%{transform:translateY(0)} 6%,18%,30%,64%,76%,88%{transform:translateY(-4px)}}
+@keyframes twn-paper-settle {0%,34%,72%,100%{transform:translateY(0)} 44%,58%{transform:translateY(-1.5px)}}
+@keyframes twn-writing {0%,100%{opacity:.35} 32%,82%{opacity:1}}
+@keyframes twn-think-a {0%,12%,24%,76%,88%,98%,100%{transform:translateY(0) scaleY(1)} 6%,18%,82%,94%{transform:translateY(1.6px) scaleY(.7)}}
+@keyframes twn-think-b {0%,20%,30%,80%,92%,100%{transform:translateY(0) scaleY(1)} 14%,26%,86%{transform:translateY(1.6px) scaleY(.7)}}
+@keyframes twn-think-strike {0%,12%,24%,76%,88%,98%,100%{transform:translateY(0)} 6%,18%,82%,94%{transform:translateY(-4px)}}
+@keyframes twn-think-writing {0%,100%{opacity:.35} 24%,72%{opacity:.7} 88%{opacity:1}}
+@keyframes twn-return-a {0%,12%,24%,36%,68%,80%,92%,100%{transform:translateY(0) scaleY(1)} 6%,18%,30%,74%,86%{transform:translateY(1.6px) scaleY(.7)}}
+@keyframes twn-return-b {0%,20%,32%,66%,78%,90%,100%{transform:translateY(0) scaleY(1)} 14%,26%,72%,84%{transform:translateY(1.6px) scaleY(.7)}}
+@keyframes twn-return-strike {0%,12%,24%,36%,68%,80%,92%,100%{transform:translateY(0)} 6%,18%,30%,74%,86%{transform:translateY(-4px)}}
+@keyframes twn-carriage-return {0%,8%{transform:translateX(0)} 14%,20%{transform:translateX(-4px)} 26%,32%{transform:translateX(-8px)} 38%,48%{transform:translateX(-12px)} 59%,100%{transform:translateX(0)}}
+@keyframes twn-lever-return {0%,43%,66%,100%{transform:rotate(0)} 49%,56%{transform:rotate(-8deg)}}
+/* Base SVG coordinates are a complete static illustration. */
+@media(prefers-reduced-motion:reduce){.typewriter-animation *{animation:none !important;}}
+
+/* Demo presentation; not required when embedding the component. */
+.twd-page { margin:0; background:#faf9f6; color:#343b37; font-family:Arial,Helvetica,sans-serif; }
+.twd-page * {box-sizing:border-box;}
+.twd-page a {color:inherit;text-underline-offset:4px;}
+.twd-page a:focus-visible,.twd-page input:focus-visible {outline:2px solid currentColor;outline-offset:5px;}
+.twd-wrap {max-width:1340px;margin:auto;padding:32px 5vw 24px;}
+.twd-top {display:flex;align-items:center;justify-content:space-between;gap:20px;border-bottom:1px solid #343b372b;padding-bottom:24px;}
+.twd-brand {font-size:15px;font-weight:600;text-decoration:none;letter-spacing:-.4px;display:flex;align-items:center;gap:10px;}
+.twd-logo {width:26px;height:26px;}
+.twd-edition,.twd-eyebrow,.twd-meta,.twd-foot {font-size:10px;letter-spacing:1.5px;text-transform:uppercase;}
+.twd-edition {opacity:.6;}
+.twd-intro {padding:56px 0 37px;max-width:760px;}
+.twd-eyebrow {opacity:.65;margin:0 0 22px;}
+.twd-intro h1 {font:normal clamp(42px,5.5vw,72px)/1.05 Georgia,'Times New Roman',serif;letter-spacing:-2.5px;margin:0 0 22px;}
+.twd-intro p:last-child {font-size:15px;line-height:1.85;max-width:530px;margin:0;opacity:.72;}
+.twd-toolbar {display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;padding:16px 0;border-top:1px solid #343b372b;border-bottom:1px solid #343b372b;margin-bottom:27px;}
+.twd-colors {display:flex;flex-wrap:wrap;gap:18px;border:0;margin:0;padding:0;}
+.twd-colors legend {position:absolute;clip-path:inset(50%);width:1px;height:1px;overflow:hidden;}
+.twd-toolbar label {display:inline-flex;align-items:center;gap:7px;font-size:11px;cursor:pointer;}
+.twd-toolbar input {width:14px;height:14px;accent-color:#343b37;margin:0;}
+.twd-grid {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;}
+.twd-preview {display:block;position:relative;border:1px solid #343b3726;border-radius:8px;overflow:hidden;color:#343b37;background:#f3f1eb;text-decoration:none;}
+.twd-page:has(.twd-light:checked) .twd-preview {color:#fff;background:#343b37;}
+.twd-page:has(.twd-muted:checked) .twd-preview {color:#756a85;background:#f3f1eb;}
+.twd-page:has(.twd-pause:checked) .typewriter-animation * {animation-play-state:paused;}
+.twd-number {position:absolute;top:17px;left:18px;font-size:10px;opacity:.6;}
+.twd-arrow {position:absolute;bottom:13px;right:17px;font-size:18px;}
+.twd-card h2 {font:normal 23px/1.25 Georgia,'Times New Roman',serif;margin:22px 0 10px;letter-spacing:-.4px;}
+.twd-card h2 a {text-decoration:none;}
+.twd-card p {font-size:12px;line-height:1.85;opacity:.72;margin:0 0 18px;min-height:46px;}
+.twd-meta {display:flex;justify-content:space-between;gap:14px;font-size:9px;line-height:1.7;letter-spacing:.6px;opacity:.65;}
+.twd-note {margin-top:48px;padding:24px 0;border-top:1px solid #343b372b;border-bottom:1px solid #343b372b;display:flex;align-items:center;justify-content:space-between;gap:20px;font-size:12px;line-height:1.8;}
+.twd-note p {margin:0;opacity:.75;}
+.twd-note code {font-size:11px;}
+.twd-foot {margin-top:24px;display:flex;justify-content:space-between;gap:20px;font-size:9px;opacity:.55;line-height:1.7;}
+.twd-detail {max-width:1050px;}
+.twd-stage {display:flex;justify-content:center;}
+.twd-stage .typewriter-animation {max-width:720px;}
+.twd-caption {display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:15px;font-size:11px;opacity:.65;line-height:1.7;}
+@media(max-width:760px) {.twd-wrap{padding:24px}.twd-grid{grid-template-columns:1fr;gap:35px}.twd-intro{padding-top:40px}.twd-edition{max-width:125px;text-align:right;line-height:1.7;font-size:8px}.twd-card p{min-height:0}.twd-foot,.twd-note{flex-direction:column;align-items:flex-start}.twd-note{margin-top:32px}.twd-colors{gap:14px}}

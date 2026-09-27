@@ -19,3 +19,6 @@ The reusable scene is transparent. It consists only of a front-facing typewriter
 
 ## Accessibility
 prefers-reduced-motion:reduce stops all key, paper and carriage movement and retains the complete static drawing. Native demo controls pause motion and change the inherited color. For purely decorative use, replace the figure's role and aria-label with aria-hidden="true".
+
+## Writing rhythm
+Four short, abstract strokes reveal progressively using normalized SVG path lengths and CSS stroke-dashoffset. The reflective variant holds an extended pause before the last phrase. Only these new marks fade at the end; they reset while invisible, keeping the machine and page continuously visible. Reduced motion displays every stroke immediately. The small crescent is secondary to the machine.

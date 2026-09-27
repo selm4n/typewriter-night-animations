@@ -28,3 +28,6 @@ The typewriter faces the viewer, with a broad keyboard, visible roller and uprig
 CSS keyframes animate a few keys, a small typebar and paper details. Pauses separate the gestures. The carriage-return variation moves the paper and roller together while keeping the keyboard stationary. Change --twn-duration to adjust the full timeline.
 
 prefers-reduced-motion:reduce disables all animation and retains the static drawing. Keep the accessible figure label when meaningful; for decorative use, remove role and aria-label and add aria-hidden="true". Demo color and pause controls are native inputs driven by scoped CSS :has().
+
+## Writing rhythm
+Four short, abstract strokes reveal progressively using normalized SVG path lengths and CSS stroke-dashoffset. The reflective variant holds an extended pause before the last phrase. Only these new marks fade at the end; they reset while invisible, keeping the machine and page continuously visible. Reduced motion displays every stroke immediately. The small crescent is secondary to the machine.
